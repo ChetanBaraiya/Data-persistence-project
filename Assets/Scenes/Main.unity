@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7862868}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 450625942}
+        m_TargetAssemblyTypeName: MainManager, Assembly-CSharp
+        m_MethodName: ClickOnBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7862868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,6 +679,8 @@ MonoBehaviour:
   ScoreText: {fileID: 188020406}
   GameOverText: {fileID: 474497238}
   preScoreText: {fileID: 2078529056}
+  preName: 
+  prePlayerScore: 0
 --- !u!1 &455529321
 GameObject:
   m_ObjectHideFlags: 0

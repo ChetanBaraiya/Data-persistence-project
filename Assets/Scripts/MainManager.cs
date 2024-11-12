@@ -85,8 +85,9 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
-        SaveScore(MenuManager.Instance.pName, m_Points);
+        SaveScore(preName, m_Points);
     }
+    
 
     public void SaveScore(string playerName, int point)
     {
@@ -104,6 +105,11 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+    }
+
+    public void ClickOnBack()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
 
