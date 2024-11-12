@@ -41,7 +41,7 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    public void LoadScore()
+    private void LoadScore()
     {
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
@@ -85,11 +85,11 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
-        SaveScore(preName, m_Points);
+        SaveScore(MenuManager.Instance.pName, m_Points);
     }
-    
 
-    public void SaveScore(string playerName, int point)
+
+    private void SaveScore(string playerName, int point)
     {
         Debug.Log("nameL:" + playerName + "points:" + m_Points);
         SaveData data = new SaveData();

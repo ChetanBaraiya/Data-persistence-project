@@ -15,12 +15,12 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance!=null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
         }
-        
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
         LoadScore();
@@ -28,22 +28,11 @@ public class MenuManager : MonoBehaviour
 
     public void ClickOnStart()
     {
-        GetName();
+        pName = playerName.text;
         SceneManager.LoadScene("Main");
     }
 
-    public void GetName()
-    {
-        string pName = playerName.text;
-        Debug.Log("Pname:" + pName);
-        SaveData data = new SaveData();
-        data.playerName = pName;
-        string json = JsonUtility.ToJson(data);
-
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
-    }
-
-    public void LoadScore()
+    private void LoadScore()
     {
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
